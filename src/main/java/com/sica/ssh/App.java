@@ -17,16 +17,16 @@ public class App {
     private static SshClient ssh;
 
     public static void main(String[] args) throws IOException, InterruptedException {
-//        MySSHClient sshc = new MySSHClient("192.168.120.230", "ubnt", "ubnt");
-//        if (sshc.establecerConexion()) {
-//            File f = new File("/home/ingenieria4/WMAN/plantillas/system.cfg");
-//            sshc.copiarArchivoServidorRemoto("192.168.120.230", "ubnt", "ubnt", f, f.length(), f.getName(), "/tmp/system.cfg");
-//            sshc.execCmd("cfgmtd -f /tmp/system.cfg -w");
-//            System.out.println(sshc.execCmd("/usr/etc/rc.d/rc.softrestart save"));
-//            sshc.desconectar();
-//        } else {
-//            System.out.println("No se establecio la conexion");
-//        }
+        MySSHClient sshc = new MySSHClient("192.168.120.230", "ubnt", "ubnt");
+        if (sshc.establecerConexion()) {
+            File f = new File("/home/ingenieria4/WMAN/plantillas/system.cfg");
+            sshc.copiarArchivoServidorRemoto("192.168.120.230", "ubnt", "ubnt", f, f.length(), f.getName(), "/tmp/system.cfg");
+            sshc.execCmd("cfgmtd -f /tmp/system.cfg -w");
+            System.out.println(sshc.execCmd("/usr/etc/rc.d/rc.softrestart save"));
+            sshc.desconectar();
+        } else {
+            System.out.println("No se establecio la conexion");
+        }
         leerArchivoServidorRemoto("192.168.120.3", "root", "sica2012");
     }
 
